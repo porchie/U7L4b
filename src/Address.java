@@ -63,15 +63,15 @@ public class Address {
         aptNum = address.getAptNum();
         city = address.getCity();
         state = address.getState();
-        zip = address.getZip();
+        zip = Integer.parseInt(address.getZip());
     }
 
     public String toString()
     {
         String str = "";
-        str += streetNum;
+        str += streetNum + " ";
         str += streetName;
-        str += (!aptNum.equals("-1"))  ? aptNum:"";
+        str += (!aptNum.equals("-1"))  ? " "+aptNum:"";
         str += ", " + city;
         str += ", " + state;
         str += zip;
@@ -86,7 +86,7 @@ public class Address {
         aptNum.equals(address.getAptNum())&&
         city.equals(address.getCity())&&
         state.equals(address.getState())&&
-        zip == address.getZip());
+        zip == Integer.parseInt(address.getZip()));
     }
 
 
@@ -95,8 +95,8 @@ public class Address {
 
 
 
-    public int getZip() {
-        return zip;
+    public String getZip() {
+        return "" + zip;
     }
 
 
