@@ -3,6 +3,13 @@ public class Package {
     private Address dest;
     private double weight;
 
+    public Package(Address origin,Address dest, double weight)
+    {
+        this.dest=dest;
+        this.origin=origin;
+        this.weight=weight;
+    }
+
 
 
 
