@@ -21,7 +21,7 @@ public class MainRunner {
             if(choice.equals("s"))
             {
                 System.out.println("How many simulations?");
-                int simNum = sc.nextInt();
+                int simNum = Integer.parseInt(sc.nextLine());
                 Simulator.simulate(simNum);
             }
             if(choice.equals("c"))
@@ -35,7 +35,7 @@ public class MainRunner {
                 System.out.println("What is the weight of the package(lb)");
                 double weight = sc.nextDouble();
                 Package pack = new Package(address1,address2,weight);
-                System.out.println("Price of Postage: " + PostageCalculator.calculatePostage(pack));
+                System.out.println("Price of Postage: " + PostageCalculator.calculatePostage(pack) + " lb");
             }
 
         }

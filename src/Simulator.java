@@ -27,7 +27,7 @@ public class Simulator {
 
     public static Package randomPackage() throws FileNotFoundException
     {
-        double rand = round(Math.random() * 100,1);
+        double rand = round(Math.random() * 150,1);
         Package pack = new Package(randomAddress(),randomAddress(),rand);
         return pack;
     }
