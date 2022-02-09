@@ -7,6 +7,32 @@ import java.util.Arrays;
 public class Simulator {
 
 
+
+    public static void simulate(int sims) throws FileNotFoundException
+    {
+        for(int i = 0;i<sims;i++)
+        {
+            Package pack = randomPackage();
+            Address orig = pack.getOrigin();
+            Address dest = pack.getDest();
+            double weight = pack.getWeight();
+            String price = String.format("$%.2f",PostageCalculator.calculatePostage(pack));
+            System.out.println("Origin: " + orig.toString());
+            System.out.println("Destination: " + dest.toString());
+            System.out.println("Weight of item: " + String.format("%.2f", weight));
+            System.out.println("Payment Due: " + price);
+            System.out.println();
+        }
+    }
+
+    public static Package randomPackage() throws FileNotFoundException
+    {
+        double rand = round(Math.random() * 100,1);
+        Package pack = new Package(randomAddress(),randomAddress(),rand);
+        return pack;
+    }
+
+
     public static Address randomAddress() throws FileNotFoundException
     {
         int streetNum = (int)(Math.random() * 2000) + 1;
@@ -53,5 +79,10 @@ public class Simulator {
         String[] stateZip = {stateAndRange[0], "" + randomZip};
         sc.close();
         return stateZip;
+    }
+
+    private static double round (double value, int precision) {
+        int scale = (int) Math.pow(10, precision);
+        return (double) Math.round(value * scale) / scale;
     }
 }
