@@ -8,6 +8,8 @@ public class Package {
         this.dest=dest;
         this.origin=origin;
         this.weight=weight;
+
+        if (weight<0.1) weight = 0.1;
     }
 
 
