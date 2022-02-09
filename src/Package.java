@@ -1,7 +1,12 @@
+import java.awt.*;
+
 public class Package {
     private Address origin;
     private Address dest;
     private double weight;
+    private double height;
+    private double length;
+    private double width;
 
     public Package(Address origin,Address dest, double weight)
     {
@@ -10,6 +15,8 @@ public class Package {
         this.weight=weight;
 
         if (weight<0.1) weight = 0.1;
+
+
     }
 
 
