@@ -39,7 +39,7 @@ public class Simulator {
         String streetName = randomStreetName();
         String[] stateAndZip = randomZipNState();
 
-        Address address = new Address(streetNum + "",streetName,"-1","Springfield",stateAndZip[0],Integer.parseInt(stateAndZip[1]));
+        Address address = new Address(streetNum + "",streetName,"-1","Springfield",stateAndZip[0],stateAndZip[1]);
         return address;
     }
 
@@ -75,8 +75,8 @@ public class Simulator {
         int min = Integer.parseInt(stateAndRange[1]);
         int max = Integer.parseInt(stateAndRange[2]);
         int randomZip = (int)(Math.random() *((max-min)+1)) + min;
-
-        String[] stateZip = {stateAndRange[0], "" + randomZip};
+        String randZip = String.format("%05d", randomZip);
+        String[] stateZip = {stateAndRange[0], randZip};
         sc.close();
         return stateZip;
     }

@@ -4,7 +4,7 @@ public class Address {
     private String aptNum;
     private String city;
     private String state;
-    private int zip;
+    private String zip;
 
 
     public Address(String address)
@@ -34,7 +34,7 @@ public class Address {
         address = address.substring(address.indexOf(",") + 2);
         state = address.substring(0,address.indexOf(" "));
         address = address.substring(address.indexOf(" ") + 1);
-        zip = Integer.parseInt(address);
+        zip = address;
     }
 
     public Address(Address address)
@@ -42,7 +42,7 @@ public class Address {
         copyAddress(address);
     }
 
-    public Address(String streetNum, String streetName, String aptNum, String city, String state, int zip)
+    public Address(String streetNum, String streetName, String aptNum, String city, String state, String zip)
     {
         this.streetNum = streetNum;
         this.streetName = streetName;
@@ -63,7 +63,7 @@ public class Address {
         aptNum = address.getAptNum();
         city = address.getCity();
         state = address.getState();
-        zip = Integer.parseInt(address.getZip());
+        zip = address.getZip();
     }
 
     public String toString()
@@ -86,7 +86,7 @@ public class Address {
         aptNum.equals(address.getAptNum())&&
         city.equals(address.getCity())&&
         state.equals(address.getState())&&
-        zip == Integer.parseInt(address.getZip()));
+        zip.equals(address.getZip()));
     }
 
 
