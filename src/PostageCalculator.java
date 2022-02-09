@@ -9,8 +9,10 @@ public class PostageCalculator {
     {
         double price = 3.75;
         price += 0.05 * (weight * 10);
+
         double zipDiff = Math.abs(Integer.parseInt(origZip.substring(0,3)) -  Integer.parseInt(destZip.substring(0,3)));
         zipDiff /= 100;
+
         price += zipDiff;
         return price;
 

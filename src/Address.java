@@ -74,7 +74,7 @@ public class Address {
         str += (!aptNum.equals("-1"))  ? " "+aptNum:"";
         str += ", " + city;
         str += ", " + state;
-        str +=  "  " + zip;
+        str +=  " " + zip;
         return str;
     }
 
@@ -96,7 +96,7 @@ public class Address {
 
 
     public String getZip() {
-        return "" + zip;
+        return zip;
     }
 
 
