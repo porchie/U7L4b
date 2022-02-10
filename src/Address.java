@@ -51,11 +51,6 @@ public class Address {
         this.state = state;
         this.zip = zip;
     }
-
-
-
-
-
     private void copyAddress(Address address)
     {
         streetNum = address.getStreetNum();

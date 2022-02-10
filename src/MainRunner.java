@@ -7,13 +7,10 @@ import java.util.Arrays;
 
 public class MainRunner {
     public static void main(String[] args) throws FileNotFoundException {
-
-
         Scanner sc = new Scanner(System.in);
         String choice = "";
         while(!choice.equals("q"))
         {
-
             System.out.println("Do you want to (s)imulate postages or (c)alculate your package's postage\n[Alternatively,(q) to quit the program]");
 
             choice = sc.nextLine();
@@ -37,12 +34,7 @@ public class MainRunner {
                 Package pack = new Package(address1,address2,weight);
                 System.out.println("Price of Postage: " + PostageCalculator.calculatePostage(pack) + " lb");
             }
-
         }
-
         sc.close();
-
     }
-
-
 }
