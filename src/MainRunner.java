@@ -31,7 +31,13 @@ public class MainRunner {
                 Address address2 = new Address(a2);
                 System.out.println("What is the weight of the package(lb)");
                 double weight = sc.nextDouble();
-                Package pack = new Package(address1,address2,weight);
+                System.out.println("What is the length of the package(in)");
+                double length = sc.nextDouble();
+                System.out.println("What is the width of the package(in)");
+                double width = sc.nextDouble();
+                System.out.println("What is the height of the package(in)");
+                double height = sc.nextDouble();
+                Package pack = new Package(address1,address2,weight,height,width,length);
                 System.out.println("Price of Postage: " + PostageCalculator.calculatePostage(pack) + " lb");
             }
         }

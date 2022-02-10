@@ -19,7 +19,8 @@ public class Simulator {
             String price = String.format("$%.2f",PostageCalculator.calculatePostage(pack));
             System.out.println("Origin: " + orig.toString());
             System.out.println("Destination: " + dest.toString());
-            System.out.println("Weight of item: " + String.format("%.2f", weight));
+            System.out.println("Weight of item: " + String.format("%.2f", weight) + " lb");
+            System.out.println("Dimensions of Package in inches: " + pack.getLength() + "/" + pack.getWidth() + "/" + pack.getHeight());
             System.out.println("Payment Due: " + price);
             System.out.println();
         }
@@ -27,8 +28,12 @@ public class Simulator {
 
     public static Package randomPackage() throws FileNotFoundException
     {
-        double rand = round(Math.random() * 150 + 1,1);
-        Package pack = new Package(randomAddress(),randomAddress(),rand);
+        double randWeight = round(Math.random() * 150 + 1,1);
+        double randLen = round(Math.random() * 12+ 2,1);
+        double randWid = round(Math.random() * 12 + 2,1);
+        double randHgt = round(Math.random() * 12 + 2,1);
+
+        Package pack = new Package(randomAddress(),randomAddress(),randWeight,randLen, randWid, randHgt);
         return pack;
     }
 
